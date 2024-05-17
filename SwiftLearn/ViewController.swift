@@ -26,6 +26,10 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func openChat(_ sender: Any) {
+        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "chatscreen") as! firstViewController
+        self.navigationController?.pushViewController(storyboard, animated: true)
+    }
     @IBAction func btnPressed(_ sender: Any) {
         var namSinh = fieldNhapNamSinh.text ?? "1990"
         var convertedNamSinh = Int(namSinh)!
@@ -34,6 +38,8 @@ class ViewController: UIViewController {
         labelAge.text = "\(age)"
         print("Số tuổi: \(age)")
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
