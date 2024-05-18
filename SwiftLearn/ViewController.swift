@@ -28,11 +28,21 @@ class ViewController: UIViewController {
     
     @IBAction func openChat(_ sender: Any) {
         let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "chatscreen") as! firstViewController
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.pushViewController(storyboard, animated: true)
+        
+    }
+    
+    
+    @IBAction func openLoginScreen(_ sender: Any) {
+        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "loginScreen") as! Login
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.pushViewController(storyboard, animated: true)
     }
-    @IBAction func btnPressed(_ sender: Any) {
-        var namSinh = fieldNhapNamSinh.text ?? "1990"
-        var convertedNamSinh = Int(namSinh)!
+    
+    @IBAction func calculateAge(_ sender: Any) {
+        let namSinh = fieldNhapNamSinh.text ?? "1990"
+        let convertedNamSinh = Int(namSinh)!
         let currentYear = Calendar.current.component(.year, from: Date())
         age = currentYear - convertedNamSinh
         labelAge.text = "\(age)"
