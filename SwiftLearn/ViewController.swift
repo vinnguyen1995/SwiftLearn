@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var calcBtn: UIButton!
     @IBOutlet weak var labelNamSinh: UILabel!
     @IBOutlet weak var fieldNhapNamSinh: UITextField!
     @IBOutlet weak var labelSoTuoi: UILabel!
@@ -26,6 +27,11 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func openCalculator(_ sender: Any) {
+        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "maytinh") as! MayTinh
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.pushViewController(storyboard, animated: true)
+    }
     @IBAction func openChat(_ sender: Any) {
         let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "chatscreen") as! firstViewController
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -40,17 +46,17 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(storyboard, animated: true)
     }
     
+    //Function tính tuổi
     @IBAction func calculateAge(_ sender: Any) {
-        let namSinh = fieldNhapNamSinh.text ?? "1990"
-        let convertedNamSinh = Int(namSinh)!
         let currentYear = Calendar.current.component(.year, from: Date())
-        age = currentYear - convertedNamSinh
-        labelAge.text = "\(age)"
-        print("Số tuổi: \(age)")
+        
+        if let namSinh = fieldNhapNamSinh.text, let convertedNamSinh = Int(namSinh), convertedNamSinh <= currentYear {
+                age = currentYear - convertedNamSinh
+                labelAge.text = "\(age)"
+                print("Số tuổi: \(age)")
+            } else { labelNamSinh.text = "Vui lòng nhập năm sinh hợp lệ" }
     }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

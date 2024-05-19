@@ -16,6 +16,7 @@
 		41F8F8A32BF61C91004D1E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F8F8A22BF61C91004D1E1E /* Assets.xcassets */; };
 		41F8F8A62BF61C91004D1E1E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 41F8F8A52BF61C91004D1E1E /* Base */; };
 		41F8F8AF2BF70D55004D1E1E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 41F8F8AE2BF70D55004D1E1E /* SnapKit */; };
+		652D24C72BF91E6000F8B669 /* MayTinh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D24C62BF91E6000F8B669 /* MayTinh.swift */; };
 		65CE50E92BF7B12700E9E9C3 /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE50E82BF7B12700E9E9C3 /* firstViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		41F8F8A22BF61C91004D1E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41F8F8A52BF61C91004D1E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41F8F8A72BF61C91004D1E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		652D24C62BF91E6000F8B669 /* MayTinh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MayTinh.swift; sourceTree = "<group>"; };
 		65CE50E82BF7B12700E9E9C3 /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				41F8F89A2BF61C8F004D1E1E /* ViewController.swift */,
 				41F8F89C2BF61C8F004D1E1E /* Main.storyboard */,
 				41C26E2C2BF8780F00A2A6F7 /* Login.swift */,
+				652D24C62BF91E6000F8B669 /* MayTinh.swift */,
 				41F8F8A22BF61C91004D1E1E /* Assets.xcassets */,
 				41F8F8A42BF61C91004D1E1E /* LaunchScreen.storyboard */,
 				41F8F8A72BF61C91004D1E1E /* Info.plist */,
@@ -157,6 +160,7 @@
 			files = (
 				41F8F89B2BF61C8F004D1E1E /* ViewController.swift in Sources */,
 				65CE50E92BF7B12700E9E9C3 /* firstViewController.swift in Sources */,
+				652D24C72BF91E6000F8B669 /* MayTinh.swift in Sources */,
 				41F8F8972BF61C8F004D1E1E /* AppDelegate.swift in Sources */,
 				41C26E2D2BF8780F00A2A6F7 /* Login.swift in Sources */,
 				41F8F8A12BF61C8F004D1E1E /* SwiftLearn.xcdatamodeld in Sources */,

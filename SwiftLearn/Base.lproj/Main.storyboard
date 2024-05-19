@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rA5-Eu-IKW">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,11 +36,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Hhh-36-fIu">
-                                <rect key="frame" x="96.333333333333329" y="662" width="200.66666666666669" height="34.333333333333371"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hhh-36-fIu">
+                                <rect key="frame" x="24.666666666666657" y="658" width="344" height="38.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTu-eL-a3h">
-                                        <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="114.66666666666667" height="38.333333333333336"/>
                                         <color key="tintColor" systemColor="systemPinkColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="bubble.fill" catalog="system" title="Chat"/>
@@ -49,12 +49,21 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07U-i1-z0c">
-                                        <rect key="frame" x="109.33333333333334" y="0.0" width="91.333333333333343" height="34.333333333333336"/>
+                                        <rect key="frame" x="114.66666666666666" y="0.0" width="114.66666666666666" height="38.333333333333336"/>
                                         <color key="tintColor" systemColor="systemPinkColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="person.circle.fill" catalog="system" title="Login"/>
                                         <connections>
                                             <action selector="openLoginScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bsA-qn-Ena"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHZ-Kv-t0X">
+                                        <rect key="frame" x="229.33333333333334" y="0.0" width="114.66666666666666" height="38.333333333333336"/>
+                                        <color key="tintColor" systemColor="systemPinkColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plusminus.circle.fill" catalog="system" title="May tính" imagePadding="0.0"/>
+                                        <connections>
+                                            <action selector="openCalculator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xK1-65-FXT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -92,6 +101,7 @@
                     <navigationItem key="navigationItem" title="Home" id="cam-sN-cxN"/>
                     <connections>
                         <outlet property="btnCalculate" destination="81Q-hw-wkw" id="ny4-d7-cVf"/>
+                        <outlet property="calcBtn" destination="bHZ-Kv-t0X" id="WCy-2W-LyT"/>
                         <outlet property="fieldNhapNamSinh" destination="Trn-xh-pOc" id="RyT-e7-lIT"/>
                         <outlet property="labelAge" destination="14v-xV-JoQ" id="sk0-Nc-sGx"/>
                         <outlet property="labelNamSinh" destination="pDH-Cf-7kr" id="0ur-0n-92M"/>
@@ -172,6 +182,21 @@
             </objects>
             <point key="canvasLocation" x="2681.679389312977" y="-27.464788732394368"/>
         </scene>
+        <!--May Tinh-->
+        <scene sceneID="yXT-WC-ETT">
+            <objects>
+                <viewController storyboardIdentifier="maytinh" useStoryboardIdentifierAsRestorationIdentifier="YES" id="S5O-ih-Hfo" customClass="MayTinh" customModule="SwiftLearn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ug9-Wg-iE4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="R3S-jL-TGN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7lP-w5-KUM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2682" y="1377"/>
+        </scene>
         <!--Login-->
         <scene sceneID="QRM-FP-Hd4">
             <objects>
@@ -181,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="yE8-Ua-OAd">
-                                <rect key="frame" x="16" y="74.999999999999986" width="361" height="172.66666666666663"/>
+                                <rect key="frame" x="16" y="74.999999999999986" width="361" height="180.66666666666663"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1yx-fx-iGi">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
@@ -194,13 +219,13 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unt-Ms-DSZ">
-                                        <rect key="frame" x="0.0" y="92" width="361" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="92" width="361" height="38.333333333333343"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Login"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtS-WL-p1w">
-                                        <rect key="frame" x="0.0" y="138.33333333333334" width="361" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="142.33333333333334" width="361" height="38.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign up" buttonSize="medium"/>
                                     </button>
@@ -259,11 +284,15 @@
         <image name="FacebookIcon" width="33" height="32"/>
         <image name="bubble.fill" catalog="system" width="128" height="110"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="plusminus.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
