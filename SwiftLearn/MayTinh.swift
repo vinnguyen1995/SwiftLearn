@@ -9,33 +9,116 @@ import UIKit
 import SnapKit
 
 class MayTinh: UIViewController {
-
-    var plusBtn: UIButton!
-    var minusBtn: UIButton!
-    var multiBtn: UIButton!
-    var divideBtn: UIButton!
+    
+    
+    @IBOutlet weak var lblPhepTinh: UILabel!
+    
+    @IBOutlet weak var lblKetQua: UILabel!
+    
+    var phepTinh: String = ""
+    
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        plusBtn = UIButton()
-        plusBtn.titleLabel?.text = "+"
         
-        view.addSubview(plusBtn)
-        plusBtn.snp.makeConstraints {
-            $0.width.height.equalTo(50)
-        }
-        // Do any additional setup after loading the view.
+        super.viewDidLoad()
+        clearAll()
+        
+    }
+    //Clear all function
+    func clearAll() {
+        phepTinh = ""
+        lblPhepTinh.text = ""
+        lblKetQua.text = ""
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func themVaoPhepTinh(giaTri: String) {
+        phepTinh = phepTinh + giaTri
+        lblPhepTinh.text = phepTinh
+        
     }
-    */
-
+    
+    //Function buttons
+    @IBAction func allClearTap(_ sender: Any) {
+        clearAll()
+    }
+    
+    @IBAction func backTap(_ sender: Any) {
+        if(!phepTinh.isEmpty){
+            phepTinh.removeLast()
+            lblPhepTinh.text = phepTinh
+        }
+    }
+    
+    @IBAction func percentTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "%")
+    }
+    
+    @IBAction func divideTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "/")
+    }
+    
+    @IBAction func multiplyTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "*")
+    }
+    
+    @IBAction func minusTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "-")
+    }
+    
+    @IBAction func plusTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "+")
+    }
+    
+    @IBAction func equalTap(_ sender: Any) {
+        let expression = NSExpression(format: phepTinh)
+        let result = expression.expressionValue(with: nil, context: nil) as! Double
+    }
+    
+    //Number buttons
+    
+    
+    @IBAction func decimalTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: ".")
+    }
+    
+    @IBAction func zeroTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "0")
+    }
+    
+    @IBAction func oneTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "1")
+    }
+    
+    @IBAction func twoTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "2")
+    }
+    
+    @IBAction func threeTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "3")
+    }
+    
+    @IBAction func fourTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "4")
+    }
+    
+    @IBAction func fiveTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "5")
+    }
+    
+    @IBAction func sixTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "6")
+    }
+    
+    @IBAction func sevenTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "7")
+    }
+    
+    @IBAction func eightTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "8")
+    }
+    
+    @IBAction func nineTap(_ sender: Any) {
+        themVaoPhepTinh(giaTri: "9")
+    }
+    
 }
