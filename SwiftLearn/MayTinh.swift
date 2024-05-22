@@ -37,7 +37,7 @@ class MayTinh: UIViewController {
         
     }
     
-    //Function buttons
+    //Function button
     @IBAction func allClearTap(_ sender: Any) {
         clearAll()
     }
@@ -71,11 +71,18 @@ class MayTinh: UIViewController {
     
     @IBAction func equalTap(_ sender: Any) {
         if validInput() {
-            let checkingWorkingsForPercent = phepTinh.replacingOccurrences(of: "%", with: "*0.01")
-            let expression = NSExpression(format: checkingWorkingsForPercent)
+            
+            var modifiedWorkings = phepTinh.replacingOccurrences(of: "%", with: "*0.01")
+                    
+            // Ensure all numbers are treated as doubles
+            modifiedWorkings = modifiedWorkings.replacingOccurrences(of: "(\\d+)", with: "$1.0", options: .regularExpression)
+            let expression = NSExpression(format: modifiedWorkings)
             let ketQua = expression.expressionValue(with: nil, context: nil) as! Double
             let ketQuaFormatted = formatKetQua(ketQua: ketQua)
             lblKetQua.text = ketQuaFormatted
+            print("Expression:\(expression)")
+            print("Ket qua:\(ketQua)")
+            print("Ket qua formatted:\(ketQuaFormatted)")
         }
         else
         {
@@ -86,7 +93,7 @@ class MayTinh: UIViewController {
     }
     
     func formatKetQua(ketQua: Double) -> String {
-        if(ketQua.truncatingRemainder(dividingBy: 1) == 0){
+        if floor(ketQua) == ketQua {
             return String(format: "%.0f", ketQua)
         }
         else
@@ -97,38 +104,27 @@ class MayTinh: UIViewController {
     
     //Function validate input
     func validInput() -> Bool {
+        var previous: Int = -1
         var count = 0
-        var funccharIndexes = [Int]()
         
-        for char in phepTinh{
-            if(specialCharacter(char: char)){
-                funccharIndexes.append(count)
+        for char in phepTinh {
+            if specialCharacter(char: char) {
+                // Check if the special character is at the start or end
+                if count == 0 || count == phepTinh.count - 1 {
+                    return false
+                }
+                // Check if two special characters are adjacent
+                if previous != -1 && count - previous == 1 {
+                    return false
+                }
+                previous = count
             }
             count += 1
         }
         
-        var previous: Int = -1
-        
-        for index in funccharIndexes
-        {
-            if(index == 0){
-                return false
-            }
-            
-            if(index == phepTinh.count - 1){
-                return false
-            }
-            
-            if(previous != -1){
-                if(index - previous == 1){
-                    return false
-                }
-            }
-            previous = index
-        }
-        
         return true
     }
+
     
     //Function special char */+-
     func specialCharacter (char: Character) -> Bool {
