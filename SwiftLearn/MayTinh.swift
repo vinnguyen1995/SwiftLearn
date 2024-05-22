@@ -70,8 +70,81 @@ class MayTinh: UIViewController {
     }
     
     @IBAction func equalTap(_ sender: Any) {
-        let expression = NSExpression(format: phepTinh)
-        let result = expression.expressionValue(with: nil, context: nil) as! Double
+        if validInput() {
+            let checkingWorkingsForPercent = phepTinh.replacingOccurrences(of: "%", with: "*0.01")
+            let expression = NSExpression(format: checkingWorkingsForPercent)
+            let ketQua = expression.expressionValue(with: nil, context: nil) as! Double
+            let ketQuaFormatted = formatKetQua(ketQua: ketQua)
+            lblKetQua.text = ketQuaFormatted
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Invalid input", message: "Please check your input again", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func formatKetQua(ketQua: Double) -> String {
+        if(ketQua.truncatingRemainder(dividingBy: 1) == 0){
+            return String(format: "%.0f", ketQua)
+        }
+        else
+        {
+            return String(format: "%.2f", ketQua)
+        }
+    }
+    
+    //Function validate input
+    func validInput() -> Bool {
+        var count = 0
+        var funccharIndexes = [Int]()
+        
+        for char in phepTinh{
+            if(specialCharacter(char: char)){
+                funccharIndexes.append(count)
+            }
+            count += 1
+        }
+        
+        var previous: Int = -1
+        
+        for index in funccharIndexes
+        {
+            if(index == 0){
+                return false
+            }
+            
+            if(index == phepTinh.count - 1){
+                return false
+            }
+            
+            if(previous != -1){
+                if(index - previous == 1){
+                    return false
+                }
+            }
+            previous = index
+        }
+        
+        return true
+    }
+    
+    //Function special char */+-
+    func specialCharacter (char: Character) -> Bool {
+        if (char == "*") {
+            return true
+        }
+        if (char == "/") {
+            return true
+        }
+        if (char == "+") {
+            return true
+        }
+        if (char == "-") {
+            return true
+        }
+        return false
     }
     
     //Number buttons
