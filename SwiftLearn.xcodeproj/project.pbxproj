@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		41C26E2D2BF8780F00A2A6F7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C26E2C2BF8780F00A2A6F7 /* Login.swift */; };
+		41CC84002BFF9BC300258522 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CC83FF2BFF9BC300258522 /* NoteListViewController.swift */; };
+		41CC84022BFFB19900258522 /* EmptyNoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CC84012BFFB19900258522 /* EmptyNoteList.swift */; };
+		41D10DCF2C0102A900D2E4AC /* NoteInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D10DCE2C0102A900D2E4AC /* NoteInput.swift */; };
 		41F8F8972BF61C8F004D1E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F8962BF61C8F004D1E1E /* AppDelegate.swift */; };
 		41F8F8992BF61C8F004D1E1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F8982BF61C8F004D1E1E /* SceneDelegate.swift */; };
 		41F8F89B2BF61C8F004D1E1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F89A2BF61C8F004D1E1E /* ViewController.swift */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		41C26E2C2BF8780F00A2A6F7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		41CC83FF2BFF9BC300258522 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		41CC84012BFFB19900258522 /* EmptyNoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNoteList.swift; sourceTree = "<group>"; };
+		41D10DCE2C0102A900D2E4AC /* NoteInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInput.swift; sourceTree = "<group>"; };
 		41F8F8932BF61C8F004D1E1E /* SwiftLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F8F8962BF61C8F004D1E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41F8F8982BF61C8F004D1E1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +76,9 @@
 				41F8F8982BF61C8F004D1E1E /* SceneDelegate.swift */,
 				41F8F89A2BF61C8F004D1E1E /* ViewController.swift */,
 				41F8F89C2BF61C8F004D1E1E /* Main.storyboard */,
+				41D10DCE2C0102A900D2E4AC /* NoteInput.swift */,
+				41CC84012BFFB19900258522 /* EmptyNoteList.swift */,
+				41CC83FF2BFF9BC300258522 /* NoteListViewController.swift */,
 				41C26E2C2BF8780F00A2A6F7 /* Login.swift */,
 				652D24C62BF91E6000F8B669 /* MayTinh.swift */,
 				41F8F8A22BF61C91004D1E1E /* Assets.xcassets */,
@@ -158,12 +167,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41CC84002BFF9BC300258522 /* NoteListViewController.swift in Sources */,
 				41F8F89B2BF61C8F004D1E1E /* ViewController.swift in Sources */,
+				41D10DCF2C0102A900D2E4AC /* NoteInput.swift in Sources */,
 				65CE50E92BF7B12700E9E9C3 /* firstViewController.swift in Sources */,
 				652D24C72BF91E6000F8B669 /* MayTinh.swift in Sources */,
 				41F8F8972BF61C8F004D1E1E /* AppDelegate.swift in Sources */,
 				41C26E2D2BF8780F00A2A6F7 /* Login.swift in Sources */,
 				41F8F8A12BF61C8F004D1E1E /* SwiftLearn.xcdatamodeld in Sources */,
+				41CC84022BFFB19900258522 /* EmptyNoteList.swift in Sources */,
 				41F8F8992BF61C8F004D1E1E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
